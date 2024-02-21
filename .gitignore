@@ -1,0 +1,4 @@
+output/*
+weights/*
+data/Celeb-DF-v2/*
+data/FaceForensics++/*
