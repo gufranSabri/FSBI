@@ -64,11 +64,11 @@ if __name__=='__main__':
     random.seed(seed)
     torch.manual_seed(seed)
     np.random.seed(seed)
-    torch.cuda.manual_seed(seed)
+    torch.mps.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-    device = torch.device('cuda')
+    device = torch.device('mps')
 
     parser=argparse.ArgumentParser()
     parser.add_argument('-w',dest='weight_name',type=str)

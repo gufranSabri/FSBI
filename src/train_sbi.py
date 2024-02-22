@@ -30,11 +30,11 @@ def main(args):
     random.seed(seed)
     torch.manual_seed(seed)
     np.random.seed(seed)
-    torch.cuda.manual_seed(seed)
+    torch.mps.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-    device = torch.device('cuda')
+    device = torch.device('mps')
 
     image_size=cfg['image_size']
     batch_size=cfg['batch_size']

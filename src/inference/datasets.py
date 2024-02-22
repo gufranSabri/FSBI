@@ -115,13 +115,13 @@ def init_cdf():
 	image_list=[]
 	label_list=[]
 
-	video_list_txt='/home/g202302610/Documents/SelfBlendedImages/data/Celeb-DF-v2/List_of_testing_videos.txt'
+	video_list_txt='./data/Celeb-DF-v2/List_of_testing_videos.txt'
 	with open(video_list_txt) as f:
-		
 		folder_list=[]
 		for data in f:
 			# print(data)
 			line=data.split()
+			if "real" in line: continue
 			# print(line)
 			path=line[1].split('/')
 			folder_list+=['data/Celeb-DF-v2/'+path[0]+'/videos/'+path[1]]

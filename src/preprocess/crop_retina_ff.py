@@ -93,7 +93,7 @@ if __name__=='__main__':
 	else:
 		raise NotImplementedError
 
-	device=torch.device('cuda')
+	device=torch.device('mps')
 
 	model = get_model("resnet50_2020-07-20", max_size=2048,device=device)
 	model.eval()

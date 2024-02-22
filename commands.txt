@@ -1,4 +1,5 @@
-python src/inference/inference_dataset.py -w weights/99_0.9932_val.tar -d CDF
+python src/inference/inference_dataset.py -d CDF
+
 python src/train_sbi.py src/configs/sbi/base.json -n sbi
 python src/preprocess/crop_dlib_ff.py -d Original -c c23
 python src/preprocess/crop_retina_ff.py -d Original -c c23

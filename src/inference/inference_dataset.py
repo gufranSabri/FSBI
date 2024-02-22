@@ -33,7 +33,7 @@ def main(args, model_path, w):
     # if w[0]=="m":model=Detector2()
     model=Detector()
     model=model.to(device)
-    cnn_sd=torch.load(model_path)["model"]
+    cnn_sd=torch.load(model_path, map_location=torch.device('cpu'))["model"]
     model.load_state_dict(cnn_sd)
     model.eval()
 
@@ -93,7 +93,7 @@ def main(args, model_path, w):
                 # face_list2.append(img_dwt)
             
             img = torch.tensor(face_list).to(device)
-
+            
             # img=torch.tensor(face_list).to(device).float()/255
             # img2 = torch.tensor(face_list2).to(device)
 
@@ -148,11 +148,11 @@ if __name__=='__main__':
     random.seed(seed)
     torch.manual_seed(seed)
     np.random.seed(seed)
-    torch.cuda.manual_seed(seed)
+    torch.mps.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-    device = torch.device('cuda')
+    device = torch.device('mps')
 
     parser=argparse.ArgumentParser()
     parser.add_argument('-w',dest='weight_name',type=str)
@@ -163,11 +163,11 @@ if __name__=='__main__':
 
     # weights = ['14_0.9988_val.tar']
     # weights = ['e_sbi380_e85_v9990.tar', 'e_sbi380_e89_9988.tar','e_sbi48_e4_v9994.tar','e_sbi48_e16_v9990.tar','e_sbi48_e20_v9991.tar','e_sbi48_e22_v9991.tar','e_sbi48_e25_v9988.tar','sbi380_e88_v9991.tar','sbi380_e91_v9992.tar', 'eb5_RBG.tar', '4_0.9994_val.tar',]
-    weights = os.listdir("/home/g202302610/Documents/SelfBlendedImages/weights")
+    weights = os.listdir("./weights")
     
     for w in weights:
         if w[0] == "d":continue
         print(w)
-        main(args, os.path.join("/home/g202302610/Documents/SelfBlendedImages/weights",w),w)
+        main(args, os.path.join("./weights",w),w)
         print("-------------------------------------------------------------------")
 

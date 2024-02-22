@@ -4,7 +4,7 @@ Welcome! This research project is an extension of the following project: [Self B
  <br>
 
 ### Approach
-![Image Description](fig/SBI.png)<br>
+![Image Description](fig/ESBI.png)<br>
 
 This project aims to detect deepfakes using Self-Blended image (SBI) approach. The process for creating the self blended images is similar to the reference paper ([Self Blended Images](https://github.com/mapooon/SelfBlendedImages/tree/master)).
 
