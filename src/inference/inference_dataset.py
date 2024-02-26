@@ -93,7 +93,8 @@ def main(args, model_path, w):
                 # face_list2.append(img_dwt)
             
             img = torch.tensor(face_list).to(device)
-            
+            print(img.shape)
+
             # img=torch.tensor(face_list).to(device).float()/255
             # img2 = torch.tensor(face_list2).to(device)
 

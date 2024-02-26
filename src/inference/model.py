@@ -12,16 +12,8 @@ import numpy as np
 class Detector(nn.Module):
     def __init__(self):
         super(Detector, self).__init__()
-        # self.net = models.resnet50(pretrained=True)  # You can use pretrained=False if you don't want pre-trained weights
-        # in_features = self.net.fc.in_features
-        # self.net.fc = nn.Linear(in_features, 2)  # Assuming 2 classes in the final layer
-
-        # self.net = models.mobilenet_v2(pretrained=True)  # You can use pretrained=False if you don't want pre-trained weights
-        # in_features = self.net.classifier[-1].in_features
-        # self.net.classifier[-1] = nn.Linear(in_features, 2)
 
         self.net=EfficientNet.from_pretrained("efficientnet-b5",advprop=True,num_classes=2)
-
 
         self.cel = nn.CrossEntropyLoss()
         self.optimizer = SAM(self.parameters(), torch.optim.SGD, lr=0.001, momentum=0.9)
