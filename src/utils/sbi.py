@@ -37,7 +37,9 @@ class SBI_Dataset(Dataset):
 		
 		assert phase in ['train','val','test']
 		
-		image_list,label_list=init_ff(phase,'frame',n_frames=n_frames)
+		# image_list,label_list=init_ff(phase,'frame',n_frames=n_frames)
+		image_list,label_list=init_cdf(phase,'frame',n_frames=n_frames)
+
 		
 		path_lm='/landmarks/' 
 		label_list=[label_list[i] for i in range(len(image_list)) if os.path.isfile(image_list[i].replace('/frames/',path_lm).replace('.png','.npy')) and os.path.isfile(image_list[i].replace('/frames/','/retina/').replace('.png','.npy'))]
