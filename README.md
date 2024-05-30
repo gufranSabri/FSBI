@@ -3,6 +3,8 @@
 Welcome! This research project is an extension of the following project: [Self Blended Images](https://github.com/mapooon/SelfBlendedImages/tree/master)
  <br>
 
+Our best model weights can be downloaded at [this link](https://www.kaggle.com/datasets/gufransabri3/fsb-best-model).
+
 ### Approach
 ![Image Description](fig/diagrams/ESBI.png)<br>
 
