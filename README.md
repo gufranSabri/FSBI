@@ -1,3 +1,5 @@
+READ PAPER <a href="https://arxiv.org/abs/2406.08625">[HERE]</a>
+
 # Deepfake detection using Enhanced Self Blended Images using DWT features
 
 Welcome! This research project is an extension of the following project: [Self Blended Images](https://github.com/mapooon/SelfBlendedImages/tree/master)
