@@ -1,4 +1,4 @@
-READ PAPER <a href="https://arxiv.org/abs/2406.08625">[HERE]</a>
+READ PAPER <a href="https://www.sciencedirect.com/science/article/pii/S026288562500006X?via%3Dihub">[HERE]</a>
 
 # Deepfake detection using Enhanced Self Blended Images using DWT features
 
